@@ -13,6 +13,12 @@ const PlayerSubmissionForm = props => {
     noun2: ''
   });
 
+  const onInputChange = event => {
+    const newFormFields = { ...formFields };
+    newFormFields[event.target.name] = event.target.value;
+    setFormFields(newFormFields);
+  };
+
   return (
     <div className="PlayerSubmissionForm">
       <h3>Player Submission Form for Player #{ props.index }</h3>
@@ -22,7 +28,7 @@ const PlayerSubmissionForm = props => {
             if (typeof value === 'string') {
               return value;
             } else {
-              return <input key={ index } placeholder={ value.placeholder } type='text' />
+              return <input key={ index } name={ value.name } placeholder={ value.placeholder } type='text' />
             }
           })}
         </div>
