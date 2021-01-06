@@ -49,6 +49,10 @@ const PlayerSubmissionForm = props => {
                        onChange={ onInputChange }
                        type='text' 
                        value={ formFields[value.key] }
+                       className={ formFields[value.key].length === 0 
+                                   ? 'PlayerSubmissionFormt__input--invalid' 
+                                   : '' 
+                                 }
                      />
             }
           })}
