@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 import './PlayerSubmissionForm.css';
 
 const PlayerSubmissionForm = props => {
-  const [formFields, setFormFields] = useState({
+  const defaultFormFields = {
     adj1: '',
     noun1: '',
     adv: '',
     verb: '',
     adj2: '',
     noun2: ''
-  });
+  };
+
+  const [formFields, setFormFields] = useState(defaultFormFields);
 
   const onInputChange = event => {
     const newFormFields = { ...formFields };
@@ -22,15 +24,7 @@ const PlayerSubmissionForm = props => {
   const onFormSubmit = event => {
     event.preventDefault();
     props.sendSubmission(formFields);
-
-    setFormFields({
-      adj1: '',
-      noun1: '',
-      adv: '',
-      verb: '',
-      adj2: '',
-      noun2: ''
-    });
+    setFormFields(defaultFormFields);
   };
 
   return (
@@ -48,12 +42,12 @@ const PlayerSubmissionForm = props => {
                         placeholder={ value.placeholder }
                         onChange={ onInputChange }
                         type='text' 
-                        value={ formFields[value.key] }
-                        className={ formFields[value.key].length === 0 
+                        value={ formFields[value.key] || '' }
+                        className={ !formFields[value.key]
                                     ? 'PlayerSubmissionForm__input--invalid' 
                                     : '' 
                                   }
-                     />
+                    />
             }
           })}
         </div>
