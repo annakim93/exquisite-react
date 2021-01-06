@@ -46,12 +46,17 @@ const Game = () => {
 
   const [playerNum, setPlayerNum] = useState(1);
   const [poemLines, setPoemLines] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
 
   const addLine = (line) => {
     const newPoemLines = [...poemLines];
     newPoemLines.push(line);
     setPoemLines(newPoemLines);
     setPlayerNum(playerNum + 1);
+  };
+
+  const submitPoem = () => {
+    setSubmitted(true);
   };
 
   return (
@@ -64,7 +69,7 @@ const Game = () => {
       </p>
       <RecentSubmission />
       <PlayerSubmissionForm index={ playerNum } sendSubmission={ addLine } fields={FIELDS} />
-      <FinalPoem />
+      <FinalPoem isSubmitted={ submitted } submissions={ poemLines } revealPoem={ submitPoem } />
     </div>
   );
 }
