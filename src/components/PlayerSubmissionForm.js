@@ -28,7 +28,13 @@ const PlayerSubmissionForm = props => {
             if (typeof value === 'string') {
               return value;
             } else {
-              return <input key={ index } name={ value.name } placeholder={ value.placeholder } type='text' />
+              return <input 
+                       key={ index }
+                       name={ value.name }
+                       placeholder={ value.placeholder }
+                       onChange={ onInputChange }
+                       type='text' 
+                     />
             }
           })}
         </div>
