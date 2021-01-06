@@ -67,6 +67,7 @@ const Game = () => {
       <p className="Game__format-example">
         { exampleFormat }
       </p>
+      { console.log(submitted) }
       <RecentSubmission />
       <PlayerSubmissionForm index={ playerNum } sendSubmission={ addLine } fields={FIELDS} />
       <FinalPoem isSubmitted={ submitted } submissions={ poemLines } revealPoem={ submitPoem } />
