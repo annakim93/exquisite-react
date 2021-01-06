@@ -48,6 +48,7 @@ const PlayerSubmissionForm = props => {
                        placeholder={ value.placeholder }
                        onChange={ onInputChange }
                        type='text' 
+                       value={ formFields[value.key] }
                      />
             }
           })}
