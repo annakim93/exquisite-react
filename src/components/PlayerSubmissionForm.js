@@ -3,7 +3,16 @@ import PropTypes from 'prop-types';
 
 import './PlayerSubmissionForm.css';
 
-const PlayerSubmissionForm = (props) => {
+const PlayerSubmissionForm = props => {
+  const [formFields, setFormFields] = useState({
+    adj1: '',
+    noun1: '',
+    adv: '',
+    verb: '',
+    adj2: '',
+    noun2: ''
+  });
+
   return (
     <div className="PlayerSubmissionForm">
       <h3>Player Submission Form for Player #{ props.index }</h3>
