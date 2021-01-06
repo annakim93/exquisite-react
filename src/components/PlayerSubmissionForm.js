@@ -9,12 +9,13 @@ const PlayerSubmissionForm = (props) => {
       <h3>Player Submission Form for Player #{ props.index }</h3>
       <form className="PlayerSubmissionForm__form" >
         <div className="PlayerSubmissionForm__poem-inputs">
-          {
-            // Put your form inputs here... We've put in one below as an example
-          }
-          <input
-            placeholder="hm..."
-            type="text" />
+          {props.fields.map((value, index) => {
+            if (typeof value === 'string') {
+              return value;
+            } else {
+              return <input key={ index } placeholder={ value.placeholder } type='text' />
+            }
+          })}
         </div>
         <div className="PlayerSubmissionForm__submit">
           <input type="submit" value="Submit Line" className="PlayerSubmissionForm__submit-btn" />
