@@ -30,7 +30,7 @@ const PlayerSubmissionForm = props => {
             } else {
               return <input 
                        key={ index }
-                       name={ value.name }
+                       name={ value.key }
                        placeholder={ value.placeholder }
                        onChange={ onInputChange }
                        type='text' 
