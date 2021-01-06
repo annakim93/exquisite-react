@@ -51,6 +51,7 @@ const Game = () => {
     const newPoemLines = [...poemLines];
     newPoemLines.push(line);
     setPoemLines(newPoemLines);
+    setPlayerNum(playerNum + 1);
   };
 
   return (
