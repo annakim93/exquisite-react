@@ -43,16 +43,16 @@ const PlayerSubmissionForm = props => {
               return value;
             } else {
               return <input 
-                       key={ index }
-                       name={ value.key }
-                       placeholder={ value.placeholder }
-                       onChange={ onInputChange }
-                       type='text' 
-                       value={ formFields[value.key] }
-                       className={ formFields[value.key].length === 0 
-                                   ? 'PlayerSubmissionForm__input--invalid' 
-                                   : '' 
-                                 }
+                        key={ index }
+                        name={ value.key }
+                        placeholder={ value.placeholder }
+                        onChange={ onInputChange }
+                        type='text' 
+                        value={ formFields[value.key] }
+                        className={ formFields[value.key].length === 0 
+                                    ? 'PlayerSubmissionForm__input--invalid' 
+                                    : '' 
+                                  }
                      />
             }
           })}
