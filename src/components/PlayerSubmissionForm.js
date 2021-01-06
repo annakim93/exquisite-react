@@ -38,7 +38,7 @@ const PlayerSubmissionForm = props => {
       <h3>Player Submission Form for Player #{ props.index }</h3>
       <form className="PlayerSubmissionForm__form" onSubmit={ onFormSubmit } >
         <div className="PlayerSubmissionForm__poem-inputs">
-          {props.fields.map((value, index) => {
+          { props.fields.map((value, index) => {
             if (typeof value === 'string') {
               return value;
             } else {

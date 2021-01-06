@@ -8,6 +8,9 @@ const FinalPoem = (props) => {
       <div className="FinalPoem">
         <section className="FinalPoem__poem">
           <h3>Final Poem</h3>
+          { props.submissions.map((value, index) => {
+            return <p key={ index }>{ value }</p>
+          })}
         </section>
       </div>
     );
