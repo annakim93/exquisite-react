@@ -50,7 +50,16 @@ const Game = () => {
 
   const addLine = (line) => {
     const newPoemLines = [...poemLines];
-    newPoemLines.push(line);
+    
+    const structuredLine = FIELDS.map((field) => {
+      if (field.key) {
+        return line[field.key]
+      } else {
+        return field
+      }
+    }).join(' ')
+
+    newPoemLines.push(structuredLine);
     setPoemLines(newPoemLines);
     setPlayerNum(playerNum + 1);
   };
