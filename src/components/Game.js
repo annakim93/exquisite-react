@@ -16,9 +16,9 @@ const Game = () => {
   const [playerNum, setPlayerNum] = useState(1);
   const [poemLines, setPoemLines] = useState([]);
 
-  // const addLine = () => {
+  const addLine = () => {
 
-  // };
+  };
 
   return (
     <div className="Game">
@@ -29,7 +29,7 @@ const Game = () => {
         { exampleFormat }
       </p>
       <RecentSubmission />
-      <PlayerSubmissionForm />
+      <PlayerSubmissionForm index={ playerNum } sendSubmission={ addLine } />
       <FinalPoem />
     </div>
   );
