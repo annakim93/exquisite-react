@@ -47,8 +47,10 @@ const Game = () => {
   const [playerNum, setPlayerNum] = useState(1);
   const [poemLines, setPoemLines] = useState([]);
 
-  const addLine = () => {
-
+  const addLine = (line) => {
+    const newPoemLines = [...poemLines];
+    newPoemLines.push(line);
+    setPoemLines(newPoemLines);
   };
 
   return (
