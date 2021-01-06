@@ -50,7 +50,7 @@ const PlayerSubmissionForm = props => {
                        type='text' 
                        value={ formFields[value.key] }
                        className={ formFields[value.key].length === 0 
-                                   ? 'PlayerSubmissionFormt__input--invalid' 
+                                   ? 'PlayerSubmissionForm__input--invalid' 
                                    : '' 
                                  }
                      />
