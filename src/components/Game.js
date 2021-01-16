@@ -81,8 +81,8 @@ const Game = () => {
       { submitted 
         ? null
         : poemLines.length > 0
-        ? [<RecentSubmission submission={ poemLines[poemLines.length - 1] } />,
-          <PlayerSubmissionForm index={ playerNum } sendSubmission={ addLine } fields={ FIELDS } />]
+        ? [<RecentSubmission key={ poemLines.length } submission={ poemLines[poemLines.length - 1] } />,
+          <PlayerSubmissionForm key={ playerNum } index={ playerNum } sendSubmission={ addLine } fields={ FIELDS } />]
         : <PlayerSubmissionForm index={ playerNum } sendSubmission={ addLine } fields={ FIELDS } />
       }
       <FinalPoem isSubmitted={ submitted } submissions={ poemLines } revealPoem={ submitPoem } />
